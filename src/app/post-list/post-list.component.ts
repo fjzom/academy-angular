@@ -54,6 +54,7 @@ export class PostListComponent implements OnInit {
           this.posts.unshift(editedPost);
           this.selectedCategory = 'All';
           /* TODO: Call API to create post */
+          this.addPost(post);
         } else {
           /* TODO: Call API to UPDATE a post */
         }
@@ -72,7 +73,9 @@ export class PostListComponent implements OnInit {
       data: post
     });
   }
-
+  addPost(post){
+    this.postService.addPost(post);
+  }
   deletePost(post: Post) {
     const postIndex = this.posts.findIndex((postItem) => postItem.id === post.id);
     let redo = false;

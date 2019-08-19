@@ -9,6 +9,8 @@
 
 # dependencies
 /node_modules
+/src/api/node_modules
+C:\Users\Felipe\Desktop\Node\academy-angular\src\api\node_modules
 
 # profiling files
 chrome-profiler-events.json
