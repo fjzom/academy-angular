@@ -6,7 +6,7 @@ let Post = require('../models/Post');
 
 postRoutes.route('/add').post(function(req, res){
 
-    let post = new Post(req.Body);
+    let post = new Post(req.body);
     post.save()
     .then(post => {
         res.status(200).json({'post': 'post in added succesfully'});
