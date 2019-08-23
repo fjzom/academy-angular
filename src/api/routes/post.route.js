@@ -5,7 +5,9 @@ const postRoutes = express.Router();
 let Post = require('../models/Post');
 
 postRoutes.route('/add').post(function(req, res){
-
+    console.log('start');
+    debugger;
+    console.log('breakpoint');
     let post = new Post(req.body);
     post.save()
     .then(post => {
