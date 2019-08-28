@@ -47,6 +47,7 @@ export class PostListComponent implements OnInit {
     }
     const dialogRef = this.openDialog(post);
     const prevPost: Post = {...post};
+    
     dialogRef.afterClosed().subscribe((editedPost: Post) => {
       if (editedPost) {
         const postIndex = this.posts.findIndex((postItem) => postItem.id === post.id);
@@ -57,6 +58,7 @@ export class PostListComponent implements OnInit {
           this.addPost(post);
         } else {
           /* TODO: Call API to UPDATE a post */
+          this.updatePost(post);
         }
       } else {
         const postIndex = this.posts.findIndex((postItem) => postItem.id === post.id);
@@ -75,6 +77,9 @@ export class PostListComponent implements OnInit {
   }
   addPost(post){
     this.postService.addPost(post);
+  }
+  updatePost(post){
+    this.postService.updatePost(post);
   }
   deletePost(post: Post) {
     const postIndex = this.posts.findIndex((postItem) => postItem.id === post.id);

@@ -20,7 +20,7 @@ export class PostService {
     this.uri = 'http://localhost:3000/something';
    }
 
-  addPost(post:Post){
+   addPost(post:Post){
     const obj = {
       id: post.id,
       title: post.title,
@@ -33,6 +33,21 @@ export class PostService {
     }
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
+    .subscribe(res => console.log('Done'));
+  }
+  updatePost(post:Post){
+    const obj = {
+      id: post.id,
+      title: post.title,
+      shortDescription: post.shortDescription,
+      description: post.description,
+      publishedAt: post.publishedAt,
+      category: post.category,
+      image: post.image,
+      comments: post.comments
+    }
+    console.log(obj.id);
+    this.http.post(`${this.uri}/edit/:` + obj.id, obj)
     .subscribe(res => console.log('Done'));
   }
 
