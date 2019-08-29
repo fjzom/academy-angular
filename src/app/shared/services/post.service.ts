@@ -55,7 +55,7 @@ export class PostService {
     if (this.cachedPosts.length) {
       return of(this.cachedPosts);
     }
-    return this.http.get<Post[]>(`${this.baseUrl}/posts`)
+    return this.http.get<Post[]>(`${this.uri}/`)
       .pipe(
         tap(posts => this.cachedPosts = posts),
         catchError(this.handleError<Post[]>('getPosts', []))
