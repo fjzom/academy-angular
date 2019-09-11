@@ -81,6 +81,9 @@ export class PostListComponent implements OnInit {
   updatePost(post){
     this.postService.updatePost(post);
   }
+  removePost(id){
+    this.postService.removePost(id);
+  }
   deletePost(post: Post) {
     const postIndex = this.posts.findIndex((postItem) => postItem.id === post.id);
     let redo = false;
@@ -92,6 +95,7 @@ export class PostListComponent implements OnInit {
     snackBarRef.afterDismissed().subscribe(() => {
       if (!redo) {
         /* TODO: Call API to delete post */
+        this.removePost(post.id);
       }
     });
     snackBarRef.onAction().subscribe(() => {

@@ -50,6 +50,11 @@ export class PostService {
     this.http.post(`${this.uri}/edit/:` + obj.id, obj)
     .subscribe(res => console.log('Done'));
   }
+  removePost(id){ 
+    console.log(id);
+    this.http.get(`${this.uri}/delete/:${id}`)
+    .subscribe(res => console.log('deleted'));
+  }
 
   getPosts(): Observable<Post[]> {
     if (this.cachedPosts.length) {

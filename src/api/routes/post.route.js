@@ -27,9 +27,7 @@ postRoutes.route('/').get(function(req, res){
 });
 
 postRoutes.route('/edit/:id').post(function(req,res){
-    console.log('start');
-    debugger;
-    console.log('breakpoint');
+
     var filter ={ "id": req.body.id}; 
     Post.findOneAndUpdate(filter, {"$set":{ "title" : req.body.title,
     "shortDescription": req.body.shortDescription,
@@ -41,7 +39,10 @@ postRoutes.route('/edit/:id').post(function(req,res){
 });
 
 postRoutes.route('/delete/:id').get(function(req, res){
-    Post.findByIdAndRemove({_id: req.param.id}, function(err, post){
+    console.log('start');
+    debugger;
+    console.log('breakpoint');
+    Post.findOneAndDelete({id: req.params.id.substring(1)}, function(err, post){
         if(err) res.json(err)
         else res.json('Successfully removed');
     });
