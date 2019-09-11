@@ -2,7 +2,7 @@
 
 # Academy - Angular Project
 
-W A K E   UP    T H E     A P P
+W A K E -  UP  -  T H E  -   A P P
  
 
 # To run Angular server
@@ -11,7 +11,7 @@ go academy-agular folder then run npm start
 # To run node  server
 go inside  academy-agular/src/api then run npm start 
 
-# To run mongodb 
+# To run mongodb  SERVER
 go wherever you install mondgoDB (IN MY CASE C:\Program Files\mongodb\bin)  and execute .exe
 
 http://localhost:4200/
