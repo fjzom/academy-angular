@@ -12,7 +12,7 @@ go academy-agular folder then run npm start
 go inside  academy-agular/src/api then run npm start 
 
 # To run mongodb 
-go whereever you install mondgoDB (IN MY CASE C:\Program Files\mongodb\bin)  and execute .exe
+go wherever you install mondgoDB (IN MY CASE C:\Program Files\mongodb\bin)  and execute .exe
 
 http://localhost:4200/
 
